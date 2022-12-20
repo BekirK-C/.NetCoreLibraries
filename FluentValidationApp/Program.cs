@@ -1,5 +1,6 @@
 using FluentValidation.AspNetCore;
 using FluentValidationApp.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -19,6 +20,10 @@ namespace FluentValidationApp
             builder.Services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration["ConnectionString"]);
+            });
+            builder.Services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
             });
 
             var app = builder.Build();

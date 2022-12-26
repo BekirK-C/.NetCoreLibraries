@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FluentValidationApp.Models;
 using FluentValidation;
+using AutoMapper;
+using FluentValidationApp.DTOs;
 
 namespace FluentValidationApp.Controllers
 {
@@ -16,18 +18,21 @@ namespace FluentValidationApp.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IValidator<Customer> _validator;
+        private readonly IMapper _mapper;
 
-        public CustomersApiController(AppDbContext context, IValidator<Customer> validator)
+        public CustomersApiController(AppDbContext context, IValidator<Customer> validator, IMapper mapper)
         {
             _context = context;
             _validator = validator;
+            _mapper = mapper;
         }
 
         // GET: api/CustomersApi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
+        public async Task<ActionResult<IEnumerable<CustomerDto>>> GetCustomers()
         {
-            return await _context.Customers.ToListAsync();
+            List<Customer> customers = await _context.Customers.ToListAsync();
+            return _mapper.Map<List<CustomerDto>>(customers);
         }
 
         // GET: api/CustomersApi/5
@@ -45,7 +50,6 @@ namespace FluentValidationApp.Controllers
         }
 
         // PUT: api/CustomersApi/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCustomer(int id, Customer customer)
         {
@@ -76,7 +80,6 @@ namespace FluentValidationApp.Controllers
         }
 
         // POST: api/CustomersApi
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
         {

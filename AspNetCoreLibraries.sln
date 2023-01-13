@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentValidationApp", "FluentValidationApp\FluentValidationApp.csproj", "{95C4FC5A-29F6-424F-BC84-B6DF299F3418}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimit.API", "RateLimit.API\RateLimit.API.csproj", "{07B86184-5F87-4081-ABC9-9310F2DDC38B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateLimit.API", "RateLimit.API\RateLimit.API.csproj", "{07B86184-5F87-4081-ABC9-9310F2DDC38B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmidgeApp.Web", "SmidgeApp.Web\SmidgeApp.Web.csproj", "{0BA5DD0C-6C84-4232-8AD8-ADB8B28A9A81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{07B86184-5F87-4081-ABC9-9310F2DDC38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07B86184-5F87-4081-ABC9-9310F2DDC38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07B86184-5F87-4081-ABC9-9310F2DDC38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA5DD0C-6C84-4232-8AD8-ADB8B28A9A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA5DD0C-6C84-4232-8AD8-ADB8B28A9A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA5DD0C-6C84-4232-8AD8-ADB8B28A9A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA5DD0C-6C84-4232-8AD8-ADB8B28A9A81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

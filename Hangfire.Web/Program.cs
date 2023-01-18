@@ -6,21 +6,26 @@ namespace Hangfire.Web
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddHangfire(config => config.UseSqlServerStorage(builder.Configuration.GetConnectionString("HangfireConnection")));
+            //Job'larý kaydedeceði veritabanýný bildirmiþ oluyoruz
+
+            builder.Services.AddHangfireServer();
+            //Uygulama ayný zamanda Hangfire Server olacak. Job'larý SQl Server'dan çekip iþleyecek.
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+
+            app.UseHangfireDashboard("/hangfire");
 
             app.UseRouting();
 

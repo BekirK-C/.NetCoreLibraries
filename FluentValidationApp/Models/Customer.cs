@@ -8,6 +8,13 @@
         public int Age { get; set; }
         public DateTime Birthday { get; set; }
         public IList<Address>? Addresses { get; set; }
+        public CreditCard CreditCard { get; set; }
+
+        public string GetFullName()
+        {
+            // Otomatik mapping için Metot başına "Get" eklenmeli
+            return $"{Name} - {Email} - {Age}";
+        }
     }
 }
  

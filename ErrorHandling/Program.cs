@@ -14,13 +14,11 @@ namespace ErrorHandling
 
             if (!app.Environment.IsDevelopment())
             {
-               
+                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
 
             app.UseStatusCodePages();
-
-            app.UseExceptionHandler("/Home/Error"); // Development mode için buraya taþýndý
 
             app.UseHttpsRedirection();
 

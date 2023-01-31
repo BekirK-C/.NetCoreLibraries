@@ -1,4 +1,5 @@
-﻿using ErrorHandling.Models;
+﻿using ErrorHandling.Filter;
+using ErrorHandling.Models;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -14,6 +15,7 @@ namespace ErrorHandling.Controllers
             _logger = logger;
         }
 
+        [CustomHandleExceptionFilterAttriubute]
         public IActionResult Index()
         {
             int number1 = 5;
@@ -36,6 +38,15 @@ namespace ErrorHandling.Controllers
             ViewBag.path = exception.Path;
             ViewBag.message = exception.Error.Message;
 
+            return View();
+        }
+
+        public IActionResult Error1()
+        {
+            return View();
+        }
+        public IActionResult Error2()
+        {
             return View();
         }
     }

@@ -9,6 +9,8 @@ namespace Logging
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            //builder.Logging.ClearProviders(); //Built-in gelen loglama provider'larý kaldýrýr.
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

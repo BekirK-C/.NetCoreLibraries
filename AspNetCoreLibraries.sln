@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.Web", "Hangfire.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandling", "ErrorHandling\ErrorHandling.csproj", "{E73A4F99-E35D-491C-B938-16B0BE35768D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{C2A78478-D151-4D1B-8531-03CC67F978C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E73A4F99-E35D-491C-B938-16B0BE35768D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E73A4F99-E35D-491C-B938-16B0BE35768D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E73A4F99-E35D-491C-B938-16B0BE35768D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2A78478-D151-4D1B-8531-03CC67F978C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A78478-D151-4D1B-8531-03CC67F978C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A78478-D151-4D1B-8531-03CC67F978C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A78478-D151-4D1B-8531-03CC67F978C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

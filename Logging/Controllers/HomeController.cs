@@ -11,16 +11,19 @@ namespace Logging.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            _logger.LogDebug(1, "NLog injected into HomeController");
         }
 
         public IActionResult Index()
         {
-            _logger.LogTrace("Index sayfasına girildi");
-            _logger.LogDebug("Index sayfasına girildi");
-            _logger.LogInformation("Index sayfasına girildi");
-            _logger.LogWarning("Index sayfasına girildi");
-            _logger.LogError("Index sayfasına girildi");
-            _logger.LogCritical("Index sayfasına girildi");
+            //_logger.LogTrace("Index sayfasına girildi");
+            //_logger.LogDebug("Index sayfasına girildi");
+            //_logger.LogInformation("Index sayfasına girildi");
+            //_logger.LogWarning("Index sayfasına girildi");
+            //_logger.LogError("Index sayfasına girildi");
+            //_logger.LogCritical("Index sayfasına girildi");
+
+            _logger.LogInformation("Hello, this is the index!");
             return View();
         }
 
